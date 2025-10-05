@@ -1,2 +1,1 @@
-# Planning 
-Template for planning
+# Planning for browser form

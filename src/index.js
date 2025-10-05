@@ -1,3 +1,3 @@
-// Template index.js file
+// Browser form JS index
 
 import "./style.css";

@@ -1,2 +1,3 @@
-# template-js
-Template repo for HTML/CSS/JS projects
+# Browser form
+
+A simple browser form to practice JS validation. Built for TOP by [joeypizzas](https://github.com/joeypizzas).
