@@ -29,5 +29,9 @@
     "webpack": "^5.101.3",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "i18n-iso-countries": "^7.14.0",
+    "postal-codes-js": "^2.5.2"
   }
 }
