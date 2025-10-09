@@ -73,6 +73,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
+  align-self: center;
 }
 
 form {
@@ -93,17 +94,29 @@ form {
 }
 
 input {
-  padding: 0.25rem 0.35rem 0.25rem 0.35rem;
+  padding: 0.3rem 0.35rem 0.3rem 0.35rem;
   color: var(--text-primary);
   border-radius: 4px;
   border: 1px solid var(--border);
 }
 
+input::placeholder {
+  color: var(--text-secondary);
+}
+
 select {
-  padding: 0.25rem 0.35rem 0.25rem 0.35rem;
+  padding: 0.3rem 0.35rem 0.3rem 0.35rem;
   color: var(--text-primary);
   border-radius: 4px;
   border: 1px solid var(--border);
+}
+
+#placeholder-select {
+  color: var(--text-secondary);
+}
+
+option {
+  padding: 0.25rem 0.35rem 0.25rem 0.35rem;
 }
 
 button {
@@ -115,6 +128,7 @@ button {
   min-width: 5rem;
   align-self: center;
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
 #footer {
