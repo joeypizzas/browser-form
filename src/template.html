@@ -14,25 +14,54 @@
           <form>
             <div id="email-container" class="field-container">
               <div id="email-title" class="field-title">Email</div>
-              <input id="email-input" type="text" />
+              <input
+                id="email-input"
+                type="email"
+                name="email"
+                placeholder="joey@pizzas.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                required
+              />
             </div>
             <div id="country-container" class="field-container">
               <div id="country-title" class="field-title">Country</div>
-              <select name="" id="country-select"></select>
+              <select id="country-select" name="country" required>
+                <option value="" disabled selected hidden>
+                  Select your country
+                </option>
+              </select>
             </div>
             <div id="postal-container" class="field-container">
               <div id="postal-title" class="field-title">Postal code</div>
-              <input id="postal-input" type="text" />
+              <input
+                id="postal-input"
+                type="text"
+                name="postal"
+                placeholder="10013, SW1A 1AA, etc."
+              />
             </div>
             <div id="password-container" class="field-container">
               <div id="password-title" class="field-title">Password</div>
-              <input id="password-input" type="text" />
+              <input
+                id="password-input"
+                type="text"
+                name="password"
+                placeholder="10+ characters"
+                pattern=".{10,}"
+              />
             </div>
             <div id="confirm-password-container" class="field-container">
               <div id="confirm-password-title" class="field-title">
                 Confirm password
               </div>
-              <input id="confirm-password-input" type="text" />
+              <input
+                id="confirm-password-input"
+                type="text"
+                type="text"
+                name="confirm-password"
+                placeholder="Same 10+ characters"
+                pattern=".{10,}"
+              />
             </div>
           </form>
           <button>Submit</button>
