@@ -94,7 +94,7 @@ form {
 }
 
 input {
-  padding: 0.3rem 0.35rem 0.3rem 0.35rem;
+  padding: 0.35rem 0.35rem 0.35rem 0.35rem;
   color: var(--text-primary);
   border-radius: 4px;
   border: 1px solid var(--border);
@@ -104,11 +104,19 @@ input::placeholder {
   color: var(--text-secondary);
 }
 
+input:invalid {
+  border-color: crimson;
+}
+
 select {
-  padding: 0.3rem 0.35rem 0.3rem 0.35rem;
+  padding: 0.35rem 0.35rem 0.35rem 0.35rem;
   color: var(--text-primary);
   border-radius: 4px;
   border: 1px solid var(--border);
+}
+
+select:invalid {
+  border-color: crimson;
 }
 
 #placeholder-select {
