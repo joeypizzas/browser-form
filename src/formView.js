@@ -12,6 +12,7 @@ export function initFormListeners() {
   const inputs = document.querySelectorAll("input");
   const emailInput = document.querySelector("#email-input");
   const select = document.querySelector("select");
+  const postalInput = document.querySelector("#postal-input");
   const button = document.querySelector("button");
 
   inputs.forEach((input) => {
@@ -55,6 +56,39 @@ export function initFormListeners() {
   select.addEventListener("mouseout", () => {
     select.style.borderColor =
       getComputedStyle(root).getPropertyValue("--border");
+  });
+  select.addEventListener("blur", () => {
+    select.setCustomValidity("");
+    if (!select.checkValidity()) {
+      select.setCustomValidity("Please select a country.");
+      select.reportValidity();
+    } else {
+      select.setCustomValidity("");
+    }
+  });
+  select.addEventListener("change", () => {
+    select.blur();
+    select.style.color =
+      getComputedStyle(root).getPropertyValue("--text-primary");
+  });
+
+  postalInput.addEventListener("blur", () => {
+    postalInput.setCustomValidity("");
+    if (select.value === "") {
+      postalInput.setCustomValidity("Please select a country.");
+    } else if (select.value != "" && !postalInput.checkValidity()) {
+      postalInput.setCustomValidity("Please enter a postal code.");
+    } else if (postalCodes.validate(select.value, postalInput.value) !== true) {
+      postalInput.setCustomValidity(
+        `Please enter a valid postal code for ${select.options[select.selectedIndex].text}`,
+      );
+    } else {
+      postalInput.setCustomValidity("");
+    }
+    postalInput.reportValidity();
+  });
+  postalInput.addEventListener("input", () => {
+    postalInput.setCustomValidity("");
   });
 
   button.addEventListener("mouseover", () => {
