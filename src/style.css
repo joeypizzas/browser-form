@@ -110,7 +110,7 @@ input:invalid {
 
 select {
   padding: 0.35rem 0.35rem 0.35rem 0.35rem;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   border-radius: 4px;
   border: 1px solid var(--border);
 }
