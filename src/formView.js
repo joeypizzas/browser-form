@@ -38,6 +38,16 @@ export function initFormListeners() {
     emailInput.setCustomValidity("");
   });
 
+  for (const country of Object.values(allCountries)) {
+    const newCountryOption = document.createElement("option");
+    const countryKey = Object.keys(allCountries).find(
+      (key) => allCountries[key] === country,
+    );
+    newCountryOption.value = countryKey;
+    newCountryOption.textContent = country;
+    select.appendChild(newCountryOption);
+  }
+
   select.addEventListener("mouseover", () => {
     select.style.borderColor =
       getComputedStyle(root).getPropertyValue("--border-hover");
