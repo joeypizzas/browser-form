@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser form</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div id="main-container">
+      <div id="header">Browser form</div>
+      <div id="middle">
+        <div id="form-container">
+          <div id="form-title">Sign up</div>
+          <form id="browser-form" novalidate>
+            <div id="email-container" class="field-container">
+              <div id="email-title" class="field-title">Email</div>
+              <input
+                id="email-input"
+                type="email"
+                name="email"
+                placeholder="joey@pizzas.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                required
+              />
+            </div>
+            <div id="country-container" class="field-container">
+              <div id="country-title" class="field-title">Country</div>
+              <select id="country-select" name="country" required>
+                <option value="" disabled selected hidden>
+                  Select your country
+                </option>
+              </select>
+            </div>
+            <div id="postal-container" class="field-container">
+              <div id="postal-title" class="field-title">Postal code</div>
+              <input
+                id="postal-input"
+                type="text"
+                name="postal"
+                placeholder="10013, SW1A 1AA, etc."
+                required
+              />
+            </div>
+            <div id="password-container" class="field-container">
+              <div id="password-title" class="field-title">Password</div>
+              <input
+                id="password-input"
+                type="password"
+                name="password"
+                placeholder="10+ characters"
+                pattern=".{10,}"
+                required
+              />
+            </div>
+            <div id="confirm-password-container" class="field-container">
+              <div id="confirm-password-title" class="field-title">
+                Confirm password
+              </div>
+              <input
+                id="confirm-password-input"
+                type="password"
+                name="confirm-password"
+                placeholder="Same 10+ characters"
+                pattern=".{10,}"
+                required
+              />
+            </div>
+          </form>
+          <button form="browser-form" type="submit">Submit</button>
+        </div>
+      </div>
+      <div id="footer">
+        <div id="footer-text">
+          Created by <a href="https://github.com/joeypizzas">joeypizzas</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
