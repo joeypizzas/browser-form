@@ -13,6 +13,10 @@ export function initFormListeners() {
   const emailInput = document.querySelector("#email-input");
   const select = document.querySelector("select");
   const postalInput = document.querySelector("#postal-input");
+  const passwordInput = document.querySelector("#password-input");
+  const confirmPasswordInput = document.querySelector(
+    "#confirm-password-input",
+  );
   const button = document.querySelector("button");
 
   inputs.forEach((input) => {
@@ -89,6 +93,46 @@ export function initFormListeners() {
   });
   postalInput.addEventListener("input", () => {
     postalInput.setCustomValidity("");
+  });
+
+  passwordInput.addEventListener("blur", () => {
+    passwordInput.setCustomValidity("");
+    if (!passwordInput.checkValidity()) {
+      passwordInput.setCustomValidity("Your password must be 10+ characters.");
+    } else if (
+      passwordInput.value !== confirmPasswordInput.value &&
+      confirmPasswordInput.value !== ""
+    ) {
+      passwordInput.setCustomValidity("Both password fields must match.");
+    } else {
+      passwordInput.setCustomValidity("");
+    }
+    passwordInput.reportValidity();
+  });
+  passwordInput.addEventListener("input", () => {
+    passwordInput.setCustomValidity("");
+  });
+
+  confirmPasswordInput.addEventListener("blur", () => {
+    confirmPasswordInput.setCustomValidity("");
+    if (!confirmPasswordInput.checkValidity()) {
+      confirmPasswordInput.setCustomValidity(
+        "Your password must be 10+ characters.",
+      );
+    } else if (
+      passwordInput.value !== confirmPasswordInput.value &&
+      passwordInput.value !== ""
+    ) {
+      confirmPasswordInput.setCustomValidity(
+        "Both password fields must match.",
+      );
+    } else {
+      confirmPasswordInput.setCustomValidity("");
+    }
+    confirmPasswordInput.reportValidity();
+  });
+  confirmPasswordInput.addEventListener("input", () => {
+    confirmPasswordInput.setCustomValidity("");
   });
 
   button.addEventListener("mouseover", () => {
