@@ -11,7 +11,7 @@
       <div id="middle">
         <div id="form-container">
           <div id="form-title">Sign up</div>
-          <form novalidate>
+          <form id="browser-form" novalidate>
             <div id="email-container" class="field-container">
               <div id="email-title" class="field-title">Email</div>
               <input
@@ -66,7 +66,7 @@
               />
             </div>
           </form>
-          <button>Submit</button>
+          <button form="browser-form" type="submit">Submit</button>
         </div>
       </div>
       <div id="footer">
