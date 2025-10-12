@@ -9,6 +9,8 @@ const allCountries = countries.getNames("en");
 
 export function initFormListeners() {
   const root = document.documentElement;
+  const formContainer = document.querySelector("#form-container");
+  const form = document.querySelector("form");
   const inputs = document.querySelectorAll("input");
   const emailInput = document.querySelector("#email-input");
   const select = document.querySelector("select");
@@ -18,6 +20,10 @@ export function initFormListeners() {
     "#confirm-password-input",
   );
   const button = document.querySelector("button");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
 
   inputs.forEach((input) => {
     input.addEventListener("mouseover", () => {
@@ -150,5 +156,15 @@ export function initFormListeners() {
   button.addEventListener("mouseup", () => {
     button.style.backgroundColor =
       getComputedStyle(root).getPropertyValue("--button-hover");
+    form.reportValidity();
+    const priorSuccessMessage = document.querySelector("#success-message");
+    if (form.checkValidity() && !priorSuccessMessage) {
+      const successMessage = document.createElement("div");
+      successMessage.id = "success-message";
+      successMessage.textContent = "Congrats! You created your account.";
+      successMessage.style.color =
+        getComputedStyle(root).getPropertyValue("--text-primary");
+      formContainer.insertBefore(successMessage, button);
+    }
   });
 }
