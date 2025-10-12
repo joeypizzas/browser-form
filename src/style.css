@@ -104,19 +104,11 @@ input::placeholder {
   color: var(--text-secondary);
 }
 
-input:invalid {
-  border-color: crimson;
-}
-
 select {
   padding: 0.35rem 0.35rem 0.35rem 0.35rem;
   color: var(--text-secondary);
   border-radius: 4px;
   border: 1px solid var(--border);
-}
-
-select:invalid {
-  border-color: crimson;
 }
 
 #placeholder-select {
